@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import InputField from "./components/InputField";
+import TodoList from "./components/TodoList";
 import { Todo } from "./models/models";
 
 const App: React.FC = () => {
@@ -9,7 +10,13 @@ const App: React.FC = () => {
 
   const handleAdd = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
+
+    if (todo) {
+      setTodos([...todos, { id: Date.now(), task: todo, isDone: false }]);
+      setTodo("");
+    }
   };
+  console.log(todos);
 
   return (
     <div className="App">
@@ -17,6 +24,10 @@ const App: React.FC = () => {
         <h1 className="heading">Taskify</h1>
       </header>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      <TodoList />
+      {todos.map((t) => (
+        <li>{t.task}</li>
+      ))}
     </div>
   );
 };
