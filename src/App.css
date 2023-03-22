@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
 
+/*  Två under är mina */
 body {
   margin: 0;
   padding: 0;
@@ -15,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #9fc0e4;
+  background-color: #2f74c0;
   font-family: "Neucha", cursive;
 }
 
