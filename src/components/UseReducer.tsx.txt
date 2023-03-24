@@ -1,0 +1,30 @@
+// import React, { useReducer } from "react";
+// import { Todo } from "../models/models";
+
+// type Actions =
+//   | { type: "add"; payload: string }
+//   | { type: "remove"; payload: number }
+//   | { type: "done"; payload: number };                       Ifall man vill använda? högst oklart vrf allt detta.
+
+// const TodoReducer = (state: Todo[], action: Actions) => {
+//   switch (action.type) {
+//     case "add":
+//       return [...state, { id: Date.now, task: action.payload, isDone: false }];
+//     case "remove":
+//       return state.filter((todo) => todo.id !== action.payload);
+//     case "done":
+//       return state.map((todo) => {
+//         todo.id !== action.payload ? { ...todo, isDone: !todo.isDone } : todo;
+//       });
+//     default:
+//       return state;
+//   }
+// };
+
+// const UseReducer = () => {
+//   const [state, dispatch] = useReducer(TodoReducer, []);
+
+//   return <div>UseReducer</div>;
+// };
+
+// export default UseReducer;
