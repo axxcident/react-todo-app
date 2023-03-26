@@ -28,3 +28,16 @@
 // };
 
 // export default UseReducer;
+
+
+Tidigare TodoList:
+    // <div className="todos">
+    //   {todos.map((todo) => (
+    //     <SingleTodo
+    //       key={todo.id}
+    //       todo={todo}
+    //       todos={todos}
+    //       setTodos={setTodos}
+    //     />
+    //   ))}
+    // </div>
