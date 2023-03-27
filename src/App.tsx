@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
@@ -18,6 +18,25 @@ const App: React.FC = () => {
       setTodo("");
     }
   };
+
+  // set Localstorage when todos change
+  useEffect(() => {
+    if (todos.length > 0) {
+      console.log("todos är thruthy, slänger upp på localstorage");
+      localStorage.setItem("todos", JSON.stringify(todos));
+    } else {
+      console.log("todos är falsy, gör ingenting");
+    }
+    // localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  // get Localstorage if there are stuff stored and nothing on front end... "&& !todos"
+  useEffect(() => {
+    const todosFromLocalStorage = localStorage.getItem("todos");
+    if (todosFromLocalStorage) {
+      setTodos(JSON.parse(todosFromLocalStorage));
+    }
+  }, []);
 
   // Kod krashar
   // Lösning: verkar vara problem med denna modul och React 18. Lösningen
